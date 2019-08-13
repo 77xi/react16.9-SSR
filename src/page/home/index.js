@@ -1,3 +1,8 @@
-import createClient from '~/client'
+import React from "react"
 
-createClient(`i am home page`)
+const Home = () => {
+  console.log(1)
+  return <div>i am home page</div>
+}
+
+export default Home

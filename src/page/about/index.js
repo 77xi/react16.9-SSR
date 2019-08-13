@@ -1,3 +1,5 @@
-import createClient from '~/client'
+import React from "react"
 
-createClient(`i am about page`)
+const About = () => <div>i am about page</div>
+
+export default About

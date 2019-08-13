@@ -1,14 +1,16 @@
 const webpack = require("webpack")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const merge = require("webpack-merge")
-const AssetsPlugin = require('assets-webpack-plugin')
+const AssetsPlugin = require("assets-webpack-plugin")
 
 const baseConfig = require("./base.config")
 const paths = require("./paths")
 
 const config = merge(baseConfig, {
+  devtool: "inline-source-map",
   output: {
-    filename: "[name].[contenthash].js",
+    filename: "bundle.js",
+    // filename: "[name].[contenthash].js",
     path: paths.resolveRoot("dist/client"),
     publicPath: "/"
   },
@@ -31,7 +33,7 @@ const config = merge(baseConfig, {
     }),
     new CleanWebpackPlugin(),
     new AssetsPlugin({
-      path: paths.resolveRoot('dist/client')
+      path: paths.resolveRoot("dist/client")
     })
   ]
 })
