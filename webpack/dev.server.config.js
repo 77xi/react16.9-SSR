@@ -1,10 +1,11 @@
 const webpack = require("webpack")
-const nodeExternals = require('webpack-node-externals')
+const merge = require("webpack-merge")
+const nodeExternals = require("webpack-node-externals")
 
 const paths = require("./paths")
+const baseConfig = require("./base.config")
 
-const config = {
-  mode: 'development',
+const config = merge(baseConfig, {
   entry: {
     server: paths.resolveRoot("src/server")
   },
@@ -14,11 +15,6 @@ const config = {
     filename: "[name].js",
     path: paths.resolveRoot("dist/server"),
     publicPath: "/"
-  },
-  resolve: {
-    alias: {
-      "~": paths.resolveRoot("src")
-    }
   },
   module: {
     rules: [
@@ -37,6 +33,6 @@ const config = {
       __isBrowser__: false
     })
   ]
-}
+})
 
 module.exports = config

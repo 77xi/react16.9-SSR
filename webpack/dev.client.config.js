@@ -1,22 +1,15 @@
 const webpack = require("webpack")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const merge = require("webpack-merge")
 
+const baseConfig = require("./base.config")
 const paths = require("./paths")
-const getEntrys = require("./getEntrys")
-const pageEntrys = getEntrys()
 
-const config = {
-  mode: 'development',
-  entry: pageEntrys,
+const config = merge(baseConfig, {
   output: {
     filename: "js/[name].[contenthash].js",
     path: paths.resolveRoot("dist/client"),
     publicPath: "/"
-  },
-  resolve: {
-    alias: {
-      "~": paths.resolveRoot("src")
-    }
   },
   module: {
     rules: [
@@ -37,6 +30,6 @@ const config = {
     }),
     new CleanWebpackPlugin()
   ]
-}
+})
 
 module.exports = config
