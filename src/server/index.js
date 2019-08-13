@@ -1,3 +1,4 @@
+import fs from "fs"
 import Koa from "koa"
 import Router from "koa-router"
 import Statics from "koa-static"
@@ -17,9 +18,32 @@ app.use(Statics(paths.resolveRoot("dist")))
 
 router.get("*", ctx => {
   const context = {}
-  const { url } = ctx
+  const { url, path } = ctx
+  const currentRoute = routes.find(route => matchPath(path, route))
+  const { name: spanName } = currentRoute
 
-  const currentPath = routes.find(route => matchPath(url, route))
+  const assetsMapStr = fs.readFileSync(
+    paths.resolveRoot("dist", "client", "manifest.json"),
+    "utf-8"
+  )
+  const cssRegExp = /\.css$/
+  const jsRegExp = /\.js$/
+  const assetsValues = Object.values(JSON.parse(assetsMapStr))
+  const styles = assetsValues.filter(
+    assetsPath =>
+      cssRegExp.test(assetsPath) && assetsPath.startsWith(`client/${spanName}.`)
+  )
+  const scripts = assetsValues.filter(
+    assetsPath =>
+      jsRegExp.test(assetsPath) && assetsPath.startsWith(`client/${spanName}.`)
+  )
+
+  const stylesStr = styles
+    .map(style => `<link href=${style} rel="stylesheet"></link>`)
+    .join("")
+  const scriptsStr = scripts
+    .map(js => `<script src=${js} async></script>`)
+    .join("")
 
   const markup = renderToString(
     <StaticRouter location={url} context={context}>
@@ -32,10 +56,11 @@ router.get("*", ctx => {
     <html>
       <head>
         <title>SSR with RR</title>
+        ${stylesStr}
       </head>
       <body>
         <div id="app">${markup}</div>
-        <script src="/client/bundle.js" async></script>
+        ${scriptsStr}
       </body>
     </html>
   `

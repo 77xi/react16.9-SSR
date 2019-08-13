@@ -1,5 +1,7 @@
 import React from "react"
 
-const About = () => <div>i am about page</div>
+import './index.css'
+
+const About = () => <div className="About">i am about page</div>
 
 export default About

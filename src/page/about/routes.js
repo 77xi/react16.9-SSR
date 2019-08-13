@@ -4,7 +4,8 @@ const routes = [
   {
     exact: true,
     path: "/about",
-    component: About
+    component: About,
+    name: "about"
   }
 ]
 

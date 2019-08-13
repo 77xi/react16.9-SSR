@@ -1,12 +1,13 @@
 const webpack = require("webpack")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
-const merge = require("webpack-merge")
-const AssetsPlugin = require("assets-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const ManifestPlugin = require('webpack-manifest-plugin')
 
 const baseConfig = require("./base.config")
 const paths = require("./paths")
 
-const config = merge(baseConfig, {
+const config = {
+  ...baseConfig,
   devtool: "inline-source-map",
   output: {
     filename: "[name].[contenthash].js",
@@ -16,11 +17,30 @@ const config = merge(baseConfig, {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          "css-loader"
+        ]
+      },
+      {
         test: /\.(js)$/,
-        exclude: /node_modules/,
         use: [
           {
             loader: "babel-loader"
+          }
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192
+            }
           }
         ]
       }
@@ -31,10 +51,14 @@ const config = merge(baseConfig, {
       __isBrowser__: true
     }),
     new CleanWebpackPlugin(),
-    new AssetsPlugin({
-      path: paths.resolveRoot("dist/client")
+    new MiniCssExtractPlugin({
+      filename: "[name].[hash].css",
+      chunkFilename: "[name].[hash].css"
+    }),
+    new ManifestPlugin({
+      publicPath: "client/"
     })
   ]
-})
+}
 
 module.exports = config

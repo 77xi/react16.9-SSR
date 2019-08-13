@@ -1,11 +1,12 @@
 const webpack = require("webpack")
-const merge = require("webpack-merge")
 const nodeExternals = require("webpack-node-externals")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 const paths = require("./paths")
 const baseConfig = require("./base.config")
 
-const config = merge(baseConfig, {
+const config = {
+  ...baseConfig,
   entry: {
     server: paths.resolveRoot("src/server")
   },
@@ -19,7 +20,19 @@ const config = merge(baseConfig, {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1
+            }
+          }
+        ]
+      },
+      {
         test: /\.(js)$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: "babel-loader"
@@ -31,8 +44,9 @@ const config = merge(baseConfig, {
   plugins: [
     new webpack.DefinePlugin({
       __isBrowser__: false
-    })
+    }),
+    new CleanWebpackPlugin(),
   ]
-})
+}
 
 module.exports = config

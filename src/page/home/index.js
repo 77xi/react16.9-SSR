@@ -1,5 +1,7 @@
 import React from "react"
 
-const Home = () => <div>i am home page</div>
+import './index.css'
+
+const Home = () => <div className="Home">i am home page</div>
 
 export default Home
