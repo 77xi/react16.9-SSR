@@ -2,12 +2,12 @@ const webpack = require("webpack")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 const paths = require("./paths")
+const getEntrys = require("./getEntrys")
+const pageEntrys = getEntrys()
 
 const config = {
   mode: 'development',
-  entry: {
-    client: paths.resolveRoot("src/client")
-  },
+  entry: pageEntrys,
   output: {
     filename: "js/[name].[contenthash].js",
     path: paths.resolveRoot("dist/client"),

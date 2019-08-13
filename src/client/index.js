@@ -1,2 +1,3 @@
-console.log(`client work`)
+const createClient = (params) => {console.log(params)}
 
+export default createClient

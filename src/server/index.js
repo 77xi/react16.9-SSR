@@ -8,12 +8,11 @@ import paths from "../../webpack/paths"
 const app = new Koa()
 const router = new Router()
 
-app.use(Statics(paths.resolveRoot('dist')))
+app.use(Statics(paths.resolveRoot("dist")))
 
 router.get("*", ctx => {
-  const distAssets = fs.readdirSync(paths.resolveRoot("dist/client/js"))
-  const scriptStr = distAssets.map(js => `<script src=/client/js/${js} async></script>`)
-
+  const scripts = fs.readdirSync(paths.resolveRoot("dist/client/js"))
+  
   ctx.body = `
     <!DOCTYPE html>
     <html>
@@ -22,7 +21,9 @@ router.get("*", ctx => {
       </head>
       <body>
         <div id="app">im ssr</div>
-        ${scriptStr}
+        ${scripts
+          .map(js => `<script src=/client/js/${js} async></script>`)
+          .join("")}
       </body>
     </html>
   `
