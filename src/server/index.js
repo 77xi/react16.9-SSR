@@ -1,6 +1,5 @@
 import fs from "fs"
 import Koa from "koa"
-import Router from "koa-router"
 import Statics from "koa-static"
 
 import React from "react"
@@ -12,14 +11,19 @@ import routes from "~/routes"
 import App from "~/App"
 
 const app = new Koa()
-const router = new Router()
 
 app.use(Statics(paths.resolveRoot("dist")))
 
-router.get("*", ctx => {
+app.use(ctx => {
   const context = {}
   const { url, path } = ctx
   const currentRoute = routes.find(route => matchPath(path, route))
+
+  if (!currentRoute) {
+    ctx.status = 404
+    return
+  }
+
   const { name: spanName } = currentRoute
 
   const assetsMapStr = fs.readFileSync(
@@ -65,8 +69,6 @@ router.get("*", ctx => {
     </html>
   `
 })
-
-app.use(router.routes()).use(router.allowedMethods())
 
 const port = process.env.DEV_PORT || 8083
 
