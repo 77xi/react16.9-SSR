@@ -54,7 +54,7 @@ export default async (ctx) => {
     <!DOCTYPE html>
     <html>
       <head>
-        <title>SSR with RR</title>
+        <title>React SSR with Koa</title>
         ${stylesStr}
       </head>
       <body>
