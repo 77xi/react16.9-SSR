@@ -11,7 +11,7 @@ const router = new Router()
 app.use(Statics(paths.resolveRoot("dist")))
 
 router.get("*", ctx => {
-  const scripts = fs.readdirSync(paths.resolveRoot("dist/client/js"))
+  const scripts = fs.readdirSync(paths.resolveRoot("dist/client"))
   
   ctx.body = `
     <!DOCTYPE html>
@@ -22,7 +22,7 @@ router.get("*", ctx => {
       <body>
         <div id="app">im ssr</div>
         ${scripts
-          .map(js => `<script src=/client/js/${js} async></script>`)
+          .map(js => `<script src=/client/${js} async></script>`)
           .join("")}
       </body>
     </html>
