@@ -1,13 +1,14 @@
 const webpack = require("webpack")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const merge = require("webpack-merge")
+const AssetsPlugin = require('assets-webpack-plugin')
 
 const baseConfig = require("./base.config")
 const paths = require("./paths")
 
 const config = merge(baseConfig, {
   output: {
-    filename: "js/[name].[contenthash].js",
+    filename: "[name].[contenthash].js",
     path: paths.resolveRoot("dist/client"),
     publicPath: "/"
   },
@@ -28,7 +29,10 @@ const config = merge(baseConfig, {
     new webpack.DefinePlugin({
       __isBrowser__: true
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new AssetsPlugin({
+      path: paths.resolveRoot('dist/client')
+    })
   ]
 })
 
