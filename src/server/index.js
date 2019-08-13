@@ -1,7 +1,7 @@
 import Koa from "koa"
 import Statics from "koa-static"
 
-import paths from "../../webpack/paths"
+import paths from "~/../webpack/paths"
 import reactApplication from '~/server/middlewares/reactApplication'
 
 const app = new Koa()
