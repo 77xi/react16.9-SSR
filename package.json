@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "ssr-webpack",
   "scripts": {
-    "start": "npx webpack --config ./webpack/dev.config.js && npx nodemon ./dist/server/server.js"
+    "start": "yarn compiler & yarn server",
+    "compiler": "npx webpack --watch --config ./webpack/dev.config.js",
+    "server": "npx nodemon ./dist/server/server.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "path": "^0.12.7",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
