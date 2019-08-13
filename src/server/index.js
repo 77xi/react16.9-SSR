@@ -22,7 +22,7 @@ router.get("*", ctx => {
   const currentPath = routes.find(route => matchPath(url, route))
 
   const markup = renderToString(
-    <StaticRouter location={currentPath} context={context}>
+    <StaticRouter location={url} context={context}>
       <App />
     </StaticRouter>
   )

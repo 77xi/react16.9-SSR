@@ -9,8 +9,7 @@ const paths = require("./paths")
 const config = merge(baseConfig, {
   devtool: "inline-source-map",
   output: {
-    filename: "bundle.js",
-    // filename: "[name].[contenthash].js",
+    filename: "[name].[contenthash].js",
     path: paths.resolveRoot("dist/client"),
     publicPath: "/"
   },
