@@ -1,40 +1,25 @@
-import React from "react"
-import { hydrate } from "react-dom"
-import { BrowserRouter } from "react-router-dom"
+import "~/client/polyfill.client"
 
-import { createStore, applyMiddleware, combineReducers } from "redux"
-import { Provider } from "react-redux"
-import { composeWithDevTools } from "redux-devtools-extension"
+import domReady from "~/libs/domReady"
+import bootstrap from "~/client/bootstrap"
 
-import App from "~/App"
-import rootReducers from "~/redux/reducers"
-
-const createClient = ({ modules }) => {
+const initClient = ({ routes, modules }) => {
   const { initalState, spanName } = JSON.parse(
     document.getElementById("js-initalData").textContent
   )
+  return bootstrap({ routes, modules, initalState, spanName })
+}
 
-  const reducers = combineReducers({
-    ...rootReducers,
-    ...(modules && {
-      [spanName]: modules
+const createClient = options => {
+  return domReady()
+    .then(() => initClient(options))
+    .then(() => {
+      // report or set init success
     })
-  })
-
-  const store = createStore(
-    reducers,
-    initalState,
-    composeWithDevTools(applyMiddleware())
-  )
-
-  hydrate(
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>,
-    document.getElementById("app")
-  )
+    .catch((err) => {
+      console.error(`init err`, err)
+      // report error
+    })
 }
 
 export default createClient
