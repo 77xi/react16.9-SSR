@@ -21,13 +21,14 @@ import getPageModules from "~/libs/getPageModules"
 export default async ctx => {
   const { url, path } = ctx
   const currentRoute = routes.find(route => matchPath(path, route))
-  const { name: spanName } = currentRoute
 
   if (!currentRoute) {
     ctx.status = 404
     return
   }
 
+  const { name: spanName } = currentRoute
+  
   const spanModules = getPageModules(spanName)
 
   const store = createStore(
