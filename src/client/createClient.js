@@ -10,13 +10,13 @@ import App from "~/App"
 import rootReducers from "~/redux/reducers"
 
 const createClient = ({ modules }) => {
-  const { initalState } = JSON.parse(
+  const { initalState, spanName } = JSON.parse(
     document.getElementById("js-initalData").textContent
   )
 
   const reducers = combineReducers({
     ...rootReducers,
-    ...modules
+    [spanName]: modules
   })
 
   const store = createStore(

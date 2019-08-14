@@ -33,7 +33,7 @@ export default async ctx => {
   const store = createStore(
     combineReducers({
       ...rootReducers,
-      ...spanModules
+      spanModules
     })
   )
 
