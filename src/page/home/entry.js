@@ -1,3 +1,6 @@
-import createClient from '~/client/createClient'
+import createClient from "~/client/createClient"
 
-createClient()
+import modules from "./modules"
+import routes from "./routes"
+
+createClient({ routes, modules })

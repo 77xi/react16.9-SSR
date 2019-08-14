@@ -1,7 +1,15 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { connect } from "react-redux"
 
-import './index.css'
+import "./index.css"
 
-const Home = () => <div className="Home">i am home page</div>
+const Home = () => {
+  useEffect(() => {
+  }, [])
 
-export default Home
+  return <div className="Home"></div>
+}
+
+Home.fetchData = () => {}
+
+export default connect(state => state)(Home)

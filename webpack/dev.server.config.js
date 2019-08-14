@@ -10,6 +10,7 @@ const config = {
   entry: {
     server: paths.resolveRoot("src/server")
   },
+  devtool: "inline-source-map",
   target: "node",
   externals: [nodeExternals()],
   output: {
@@ -32,7 +33,6 @@ const config = {
       },
       {
         test: /\.(js)$/,
-        exclude: /node_modules/,
         use: [
           {
             loader: "babel-loader"

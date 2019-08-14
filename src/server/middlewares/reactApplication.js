@@ -1,25 +1,41 @@
-import '~/server/polyfill.server'
+import "~/server/polyfill.server"
 
 import fs from "fs"
+
 import React from "react"
 import { renderToString } from "react-dom/server"
 import { StaticRouter, matchPath } from "react-router-dom"
 
+import { createStore, combineReducers } from "redux"
+import { Provider } from "react-redux"
+
+import serialize from "serialize-javascript"
+
+import App from "~/App"
 import paths from "~/../webpack/paths"
 import routes from "~/routes"
-import App from "~/App"
+import rootReducers from "~/redux/reducers"
 
-export default async (ctx) => {
-  const context = {}
+import getPageModules from "~/libs/getPageModules"
+
+export default async ctx => {
   const { url, path } = ctx
   const currentRoute = routes.find(route => matchPath(path, route))
+  const { name: spanName } = currentRoute
 
   if (!currentRoute) {
     ctx.status = 404
     return
   }
 
-  const { name: spanName } = currentRoute
+  const spanModules = getPageModules(spanName)
+
+  const store = createStore(
+    combineReducers({
+      ...rootReducers,
+      ...spanModules
+    })
+  )
 
   const assetsMapStr = fs.readFileSync(
     paths.resolveRoot("dist", "client", "manifest.json"),
@@ -45,10 +61,20 @@ export default async (ctx) => {
     .join("")
 
   const markup = renderToString(
-    <StaticRouter location={url} context={context}>
-      <App />
+    <StaticRouter location={url}>
+      <Provider store={store}>
+        <App />
+      </Provider>
     </StaticRouter>
   )
+
+  const initalState = store.getState()
+  const stateScriptStr = `<script id="js-initalData" type="text/json">${serialize(
+    {
+      spanName,
+      initalState
+    }
+  )}</script>`
 
   ctx.body = `
     <!DOCTYPE html>
@@ -59,6 +85,7 @@ export default async (ctx) => {
       </head>
       <body>
         <div id="app">${markup}</div>
+        ${stateScriptStr}
         ${scriptsStr}
       </body>
     </html>
