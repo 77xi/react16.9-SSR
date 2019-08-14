@@ -4,10 +4,9 @@ import { connect } from "react-redux"
 import "./index.css"
 
 const Home = () => {
-  useEffect(() => {
-  }, [])
+  useEffect(() => {}, [])
 
-  return <div className="Home"></div>
+  return <div className="Home">Home</div>
 }
 
 Home.fetchData = () => {}

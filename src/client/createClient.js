@@ -16,7 +16,9 @@ const createClient = ({ modules }) => {
 
   const reducers = combineReducers({
     ...rootReducers,
-    [spanName]: modules
+    ...(modules && {
+      [spanName]: modules
+    })
   })
 
   const store = createStore(
