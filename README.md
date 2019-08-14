@@ -1,2 +1,2 @@
-# ssr-webpack
-ssr-webpack
+# react-ssr
+complete react-ssr example
