@@ -1,13 +1,22 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const ManifestPlugin = require("webpack-manifest-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 
 const baseConfig = require("./base.config")
 const paths = require("../paths")
+const { vendorDependencies } = require("../constant")
+const getEntrys = require("../getEntrys")
+
+const pageEntrys = getEntrys()
 
 const config = {
   ...baseConfig,
-  devtool: "inline-source-map",
+  entry: {
+    ...baseConfig.entry,
+    vendor: vendorDependencies
+  },
   output: {
     filename: "[name].[contenthash].js",
     path: paths.resolveRoot("dist/client"),
@@ -54,7 +63,30 @@ const config = {
     new ManifestPlugin({
       publicPath: "client/"
     })
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin()
+    ],
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: "all",
+          test: "vendor",
+          name: "vendor"
+        },
+        common: {
+          chunks: "all",
+          name: "common",
+          priority: -1,
+          minChunks: Object.keys(pageEntrys).length
+        }
+      }
+    }
+  }
 }
 
 module.exports = config

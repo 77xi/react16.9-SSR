@@ -3,7 +3,7 @@ const getEntrys = require("../getEntrys")
 const pageEntrys = getEntrys()
 
 const config = {
-  mode: "development",
+  mode: "production",
   entry: pageEntrys,
   resolve: {
     alias: {
