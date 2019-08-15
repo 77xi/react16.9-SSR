@@ -4,4 +4,4 @@ import initRedux from "./initRedux"
 const microFlow = middlewares => context =>
   middlewares.reduce((pre, cuur) => pre(context).then(() => cuur(context)))
 
-export default microFlow([renderReactApp, initRedux])
+export default microFlow([initRedux, renderReactApp])
