@@ -10,9 +10,11 @@
     "node": true,
     "browser": true
   },
-  "plugins": ["prettier" ,"react"],
+  "plugins": ["prettier" ,"react", "react-hooks"],
   "rules": {
     "prettier/prettier": "error",
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
