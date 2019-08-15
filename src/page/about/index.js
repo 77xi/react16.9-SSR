@@ -1,6 +1,6 @@
 import React from "react"
 
-import './index.css'
+import "./index.css"
 
 const About = () => <div className="About">i am about page</div>
 

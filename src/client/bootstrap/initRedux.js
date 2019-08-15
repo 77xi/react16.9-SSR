@@ -3,7 +3,7 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import rootReducers from "~/redux/reducers"
 
 const initRedux = async (context, next) => {
-  const {modules, spanName, initalState} = context
+  const { modules, spanName, initalState } = context
   const reducers = combineReducers({
     ...rootReducers,
     ...(modules && {
@@ -18,7 +18,7 @@ const initRedux = async (context, next) => {
   )
 
   context.store = store
-  
+
   next()
 }
 

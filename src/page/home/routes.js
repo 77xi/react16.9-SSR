@@ -6,14 +6,14 @@ const routes = [
     exact: true,
     path: "/home",
     component: Home,
-    name: "home"    
+    name: "home"
   },
   {
     exact: true,
     path: "/home/sub",
     component: HomeSub,
-    name: "home"    
-  },
+    name: "home"
+  }
 ]
 
 export default routes

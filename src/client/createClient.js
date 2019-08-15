@@ -16,7 +16,7 @@ const createClient = options => {
     .then(() => {
       // report or set init success
     })
-    .catch((err) => {
+    .catch(err => {
       console.error(`init err`, err)
       // report error
     })

@@ -2,6 +2,7 @@ export default async (_, next) => {
   try {
     await next()
   } catch (err) {
-    throw err
+    // eslint-disable-next-line
+    console.log(err)
   }
 }

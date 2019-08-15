@@ -1,4 +1,3 @@
-import createClient from '~/client/createClient'
+import createClient from "~/client/createClient"
 
 createClient({})
-

@@ -2,7 +2,7 @@ const assetsClientPath = "client"
 
 const getAssets = ({ spanName, assetsMapStr }) => {
   const assetsPath = Object.values(JSON.parse(assetsMapStr))
-  const rootPath = `${assetsClientPath}\/${spanName}`
+  const rootPath = `${assetsClientPath}/${spanName}`
 
   // match dist/client/home.hash.js
   const jsRegExp = new RegExp(`^${rootPath}\\..*\\.js$`)
