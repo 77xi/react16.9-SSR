@@ -5,10 +5,12 @@
   "scripts": {
     "start": "yarn compiler & yarn server",
     "start:inspect": "yarn compiler & yarn server:inspect",
-    "compiler": "npx webpack --watch --config ./webpack/bootstrap.js",
+    "compiler": "npx webpack --watch --config ./webpack/dev/bootstrap.js",
     "server": "npx nodemon ./dist/server/server.js",
     "server:inspect": "npx nodemon --inspect ./dist/server/server.js",
     "//": "lint command below is very trick, but \"prettier-eslint-cli\" does not work: https://github.com/prettier/prettier-eslint-cli",
+    "build": "npx webpack --config ./webpack/prod",
+    "build:analyze": "",
     "lint": "npx eslint \"src/**/*.js\" --fix && npx prettier --write \"src/**/*.{css,html}\""
   },
   "husky": {
