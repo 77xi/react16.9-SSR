@@ -1,5 +1,5 @@
-const paths = require("./paths")
-const getEntrys = require("./getEntrys")
+const paths = require("../paths")
+const getEntrys = require("../getEntrys")
 const pageEntrys = getEntrys()
 
 const config = {

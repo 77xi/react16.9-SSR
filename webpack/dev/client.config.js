@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const ManifestPlugin = require("webpack-manifest-plugin")
 
 const baseConfig = require("./base.config")
-const paths = require("./paths")
+const paths = require("../paths")
 
 const config = {
   ...baseConfig,

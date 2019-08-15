@@ -1,7 +1,7 @@
 const nodeExternals = require("webpack-node-externals")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
-const paths = require("./paths")
+const paths = require("../paths")
 const baseConfig = require("./base.config")
 
 const config = {
