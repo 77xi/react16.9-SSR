@@ -5,7 +5,7 @@
   "scripts": {
     "start": "yarn compiler & yarn server",
     "start:inspect": "yarn compiler & yarn server:inspect",
-    "compiler": "npx webpack --watch --config ./webpack/dev.config.js",
+    "compiler": "npx webpack --watch --config ./webpack/bootstrap.js",
     "server": "npx nodemon ./dist/server/server.js",
     "server:inspect": "npx nodemon --inspect ./dist/server/server.js"
   },
