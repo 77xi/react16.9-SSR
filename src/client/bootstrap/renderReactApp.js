@@ -6,7 +6,7 @@ import { Provider } from "react-redux"
 
 import App from "~/App"
 
-const render = async ({ initalState, spanName, store,  modules }, next) => 
+const render = async ({ store, }) => 
   hydrate(
     <BrowserRouter>
       <Provider store={store}>
