@@ -6,7 +6,7 @@ import { Provider } from "react-redux"
 
 import App from "~/App"
 
-const render = async ({ store, }) => 
+const render = async ({ store }, next) => {
   hydrate(
     <BrowserRouter>
       <Provider store={store}>
@@ -15,5 +15,8 @@ const render = async ({ store, }) =>
     </BrowserRouter>,
     document.getElementById("app")
   )
+
+  next()
+}
 
 export default render

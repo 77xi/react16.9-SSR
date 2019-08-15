@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, combineReducers } from "redux"
 import { composeWithDevTools } from "redux-devtools-extension"
 import rootReducers from "~/redux/reducers"
 
-const initRedux = async context => {
+const initRedux = async (context, next) => {
   const {modules, spanName, initalState} = context
   const reducers = combineReducers({
     ...rootReducers,
@@ -18,6 +18,8 @@ const initRedux = async context => {
   )
 
   context.store = store
+  
+  next()
 }
 
 export default initRedux
