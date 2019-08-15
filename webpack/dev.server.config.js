@@ -1,4 +1,3 @@
-const webpack = require("webpack")
 const nodeExternals = require("webpack-node-externals")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
@@ -41,12 +40,7 @@ const config = {
       }
     ]
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      __isBrowser__: false
-    }),
-    new CleanWebpackPlugin(),
-  ]
+  plugins: [new CleanWebpackPlugin()]
 }
 
 module.exports = config

@@ -1,7 +1,6 @@
-const webpack = require("webpack")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const ManifestPlugin = require('webpack-manifest-plugin')
+const ManifestPlugin = require("webpack-manifest-plugin")
 
 const baseConfig = require("./base.config")
 const paths = require("./paths")
@@ -47,9 +46,6 @@ const config = {
     ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      __isBrowser__: true
-    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].[hash].css",
