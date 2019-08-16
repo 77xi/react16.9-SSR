@@ -3,8 +3,8 @@ import serialize from "serialize-javascript"
 
 import getAssets from "~/server/util/getAssets"
 
-const Html = ({ markup, assetsMapStr, initalState, spanName }) => {
-  const { styles, scripts } = getAssets({ assetsMapStr, spanName })
+const Html = ({ markup, manifest, initalState, spanName }) => {
+  const { styles, scripts } = getAssets({ manifest, spanName })
   return (
     <html lang="en">
       <head>

@@ -32,7 +32,7 @@ export default async ctx => {
     }
   ] = branch
 
-  const assetsMapStr = fs.readFileSync(
+  const manifest = fs.readFileSync(
     paths.resolveRoot("dist", "client", "manifest.json"),
     "utf-8"
   )
@@ -66,7 +66,7 @@ export default async ctx => {
       <Html
         spanName={spanName}
         markup={markup}
-        assetsMapStr={assetsMapStr}
+        manifest={manifest}
         initalState={store.getState()}
       />
     )

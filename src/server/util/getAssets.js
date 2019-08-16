@@ -1,16 +1,12 @@
-const assetsClientPath = "client"
+const getAssets = ({ spanName, manifest }) => {
+  const manifestMap = JSON.parse(manifest)
 
-const getAssets = ({ spanName, assetsMapStr }) => {
-  const assetsPath = Object.values(JSON.parse(assetsMapStr))
-  const rootPath = `${assetsClientPath}/${spanName}`
-
-  // match dist/client/home.hash.js
-  const jsRegExp = new RegExp(`^${rootPath}\\..*\\.js$`)
-  const cssRegExp = new RegExp(`^${rootPath}\\..*\\.css$`)
+  const commonCss = manifestMap["common.css"]
+  const publicJs = [manifestMap["vendor.js"], manifestMap["common.js"]]
 
   return {
-    scripts: assetsPath.filter(assetsPath => jsRegExp.test(assetsPath)),
-    styles: assetsPath.filter(assetsPath => cssRegExp.test(assetsPath))
+    scripts: [...publicJs, manifestMap[`${spanName}.js`]].filter(Boolean),
+    styles: [commonCss, manifestMap[`${spanName}.css`]].filter(Boolean)
   }
 }
 
