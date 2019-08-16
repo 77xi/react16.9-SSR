@@ -4,7 +4,7 @@ import fs from "fs"
 
 import React from "react"
 import { renderToString, renderToStaticMarkup } from "react-dom/server"
-import { StaticRouter } from "react-router-dom"
+import { StaticRouter, Route, Switch } from "react-router-dom"
 import { matchRoutes } from "react-router-config"
 
 import { createStore, combineReducers } from "redux"
@@ -49,7 +49,13 @@ export default async ctx => {
   const markup = renderToString(
     <StaticRouter location={url}>
       <Provider store={store}>
-        <App />
+        <App>
+          <Switch>
+            {routes.map((props, index) => (
+              <Route {...props} key={index} />
+            ))}
+          </Switch>
+        </App>
       </Provider>
     </StaticRouter>
   )

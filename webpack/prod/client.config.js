@@ -74,15 +74,16 @@ const config = {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          chunks: "all",
+          chunks: "initial",
           test: "vendor",
           name: "vendor"
         },
         common: {
-          chunks: "all",
+          chunks: "initial",
           name: "common",
           priority: -1,
-          minChunks: Object.keys(pageEntrys).length
+          minChunks: Object.keys(pageEntrys).length,
+          enforce: true
         }
       }
     }

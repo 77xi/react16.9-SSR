@@ -1,4 +1,4 @@
-const prodConfig = require("./index")
+const prodConfig = require("./client.config")
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin
 
