@@ -6,9 +6,11 @@ import paths from "~/../webpack/paths"
 import reactApplication from "~/server/middlewares/reactApplication"
 import apiErrorHandler from "~/server/middlewares/apiErrorHandler"
 
+type Port = string | number
+
 const port = process.env.DEV_PORT || 8083
 
-const createServer = (port: number | string) => {
+const createServer = (port: Port) => {
   const app = new Koa()
 
   app.use(Statics(paths.resolveRoot("dist")))
