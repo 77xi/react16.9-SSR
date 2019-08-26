@@ -7,7 +7,7 @@ import { renderToString, renderToStaticMarkup } from "react-dom/server"
 import { StaticRouter, Route, Switch } from "react-router-dom"
 import { matchRoutes } from "react-router-config"
 
-import { createStore, combineReducers } from "redux"
+import { createStore, combineReducers, Store, Reducer } from "redux"
 import { Provider } from "react-redux"
 
 import App from "~/App"
@@ -38,11 +38,12 @@ export default async (ctx: Koa.BaseContext) => {
   )
 
   const spanModules = getPageModules(spanName)
+  console.log(spanModules)
 
-  const store = createStore(
+  const store: Store = createStore(
     combineReducers({
       ...rootReducers,
-      spanModules
+      ...spanModules
     })
   )
 

@@ -1,15 +1,13 @@
-interface Hash {
-  [key: string]: string
-}
+import { Reducer, ReducersMapObject } from "redux"
 
-const cache: Hash = {}
+const cache: ReducersMapObject = {}
 
-const importAll = (r: any) => r.keys().map((key: string) => (cache[key] = r(key).default))
+const importAll = (r: any) =>
+  r.keys().map((key: string) => (cache[key] = r(key).default))
 
 importAll(require.context("~/pages", true, /modules(\.ts|\/index\.ts)$/))
 
-const getPageModules = (spanName: string) => ({
-  [spanName]: cache[`./${spanName}/modules/index.ts`]
-})
+const getPageModules = (spanName: string): Reducer =>
+  cache[`./${spanName}/modules/index.ts`]
 
 export default getPageModules
