@@ -7,7 +7,7 @@ import { Reducer } from "redux"
 import domReady from "~/libs/domReady"
 import bootstrap from "~/client/bootstrap"
 
-interface Custom {
+interface CustomRoute {
   exact: boolean
   path: string
   name: string
@@ -15,7 +15,7 @@ interface Custom {
 }
 
 interface Params {
-  routes?: RouteComponentProps[] | Custom[]
+  routes?: RouteComponentProps[] | CustomRoute[]
   modules?: Reducer
 }
 

@@ -4,7 +4,7 @@ import { Store, Reducer } from "redux"
 import renderReactApp from "./renderReactApp"
 import initRedux from "./initRedux"
 
-interface Custom {
+interface CustomRoute {
   exact: boolean
   path: string
   name: string
@@ -12,7 +12,7 @@ interface Custom {
 }
 
 interface Params {
-  routes?: RouteComponentProps[] | Custom[]
+  routes?: RouteComponentProps[] | CustomRoute[]
   modules?: Reducer
   initalState?: object
   spanName?: string
