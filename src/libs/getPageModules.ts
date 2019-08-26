@@ -4,7 +4,7 @@ interface Hash {
 
 const cache: Hash = {}
 
-const importAll = r => r.keys().map(key => (cache[key] = r(key).default))
+const importAll = (r: any) => r.keys().map((key: string) => (cache[key] = r(key).default))
 
 importAll(require.context("~/pages", true, /modules(\.ts|\/index\.ts)$/))
 
