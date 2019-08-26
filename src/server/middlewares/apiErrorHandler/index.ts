@@ -1,4 +1,6 @@
-export default async (_, next) => {
+import * as Koa from "koa"
+
+export default async (_: Koa.BaseContext, next: () => Promise<any>) => {
   try {
     await next()
   } catch (err) {

@@ -1,5 +1,5 @@
-import Koa from "koa"
-import Statics from "koa-static"
+import * as Koa from "koa"
+import * as Statics from "koa-static"
 
 import paths from "~/../webpack/paths"
 
@@ -8,7 +8,7 @@ import apiErrorHandler from "~/server/middlewares/apiErrorHandler"
 
 const port = process.env.DEV_PORT || 8083
 
-const createServer = port => {
+const createServer = (port: number | string) => {
   const app = new Koa()
 
   app.use(Statics(paths.resolveRoot("dist")))

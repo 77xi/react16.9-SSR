@@ -6,7 +6,7 @@ const paths = require("./paths")
 const getEntrys = () => {
   const pagePath = paths.resolveRoot("src/pages")
   const pageNameArr = fs.readdirSync(pagePath)
-  const pageEntryArr = pageNameArr.map(name => `${pagePath}/${name}/entry.js`)
+  const pageEntryArr = pageNameArr.map(name => `${pagePath}/${name}/entry.ts`)
 
   return zipObject(pageNameArr, pageEntryArr)
 }

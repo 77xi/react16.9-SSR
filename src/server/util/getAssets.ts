@@ -1,4 +1,9 @@
-const getAssets = ({ spanName, manifest }) => {
+interface Param {
+  spanName: string
+  manifest: string
+}
+
+const getAssets = ({ spanName, manifest }: Param) => {
   const manifestMap = JSON.parse(manifest)
 
   const commonCss = manifestMap["common.css"]

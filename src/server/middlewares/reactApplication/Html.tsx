@@ -1,9 +1,16 @@
-import React from "react"
-import serialize from "serialize-javascript"
+import * as React from "react"
+import * as serialize from "serialize-javascript"
 
 import getAssets from "~/server/util/getAssets"
 
-const Html = ({ markup, manifest, initalState, spanName }) => {
+interface Param {
+  markup: string
+  manifest: string
+  initalState: object
+  spanName: string
+}
+
+const Html = ({ markup, manifest, initalState, spanName }: Param) => {
   const { styles, scripts } = getAssets({ manifest, spanName })
   return (
     <html lang="en">

@@ -1,0 +1,9 @@
+import * as React from "react"
+
+import "./index.css"
+
+const About = (): React.ReactElement => (
+  <div className="About">i am about page</div>
+)
+
+export default About

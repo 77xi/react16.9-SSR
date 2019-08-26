@@ -24,7 +24,7 @@ const config = {
         use: ["css-loader"]
       },
       {
-        test: /\.(js)$/,
+        test: /\.ts(x?)$/,
         use: [
           {
             loader: "babel-loader"

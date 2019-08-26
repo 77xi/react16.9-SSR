@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "rootDir": "./src/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "baseUrl": ".",
+    // https://stackoverflow.com/questions/44463100/typescript-cannot-find-module-that-was-defined-in-paths-setting
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  }
+}

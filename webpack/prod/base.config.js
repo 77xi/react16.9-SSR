@@ -8,7 +8,8 @@ const config = {
   resolve: {
     alias: {
       "~": paths.resolveRoot("src")
-    }
+    },
+    extensions: [".js", ".ts", ".tsx"]
   }
 }
 
