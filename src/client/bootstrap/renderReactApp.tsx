@@ -30,7 +30,7 @@ const render = async ({ store, routes }: Params, next: Function) => {
         </App>
       </Provider>
     </BrowserRouter>,
-    document.getElementById("app")
+    document.getElementById("root")
   )
 
   next()

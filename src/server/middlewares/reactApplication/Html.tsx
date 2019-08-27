@@ -23,7 +23,7 @@ const Html = ({ markup, manifest, initalState, spanName }: Param) => {
         ))}
       </head>
       <body>
-        <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
+        <div id="root" dangerouslySetInnerHTML={{ __html: markup }} />
         <script
           id="js-initalData"
           type="text/json"
