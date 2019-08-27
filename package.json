@@ -19,7 +19,7 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,css,md}": [
+    "**/*.{ts,tsx,js,css,md}": [
       "yarn lint",
       "git add"
     ]

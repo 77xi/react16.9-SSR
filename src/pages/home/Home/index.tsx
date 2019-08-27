@@ -23,13 +23,13 @@ const Home: HomeType = ({ home: { data } }) => {
 
   return (
     <div className="Home">
-      {data.map(({ action_text }, index) => (
-        <div key={index}>{action_text}</div>
+      {data.map(({ action_text: actionText }, index) => (
+        <div key={index}>{actionText}</div>
       ))}
     </div>
   )
 }
 
-Home.fetchData = ({ dispatch }: any) => dispatch(loadHomeData())
+Home.fetchData = ({ dispatch }: any) => loadHomeData()({ dispatch })
 
 export default connect(state => state)(Home)
