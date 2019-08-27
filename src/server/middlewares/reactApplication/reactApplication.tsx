@@ -7,8 +7,9 @@ import { renderToString, renderToStaticMarkup } from "react-dom/server"
 import { StaticRouter, Route, Switch } from "react-router-dom"
 import { matchRoutes } from "react-router-config"
 
-import { createStore, combineReducers, Store, Reducer } from "redux"
+import { createStore, combineReducers, applyMiddleware, Store } from "redux"
 import { Provider } from "react-redux"
+import thunk from "redux-thunk"
 
 import App from "~/App"
 import routes from "~/routes"
@@ -16,6 +17,7 @@ import rootReducers from "~/redux/reducers"
 import paths from "~/../webpack/paths"
 import getPageModules from "~/libs/getPageModules"
 import Html from "~/server/middlewares/reactApplication/Html"
+import fetchOnServer from "~/server/util/fetchOnServer"
 
 export default async (ctx: Koa.BaseContext) => {
   const { url, path } = ctx
@@ -38,14 +40,16 @@ export default async (ctx: Koa.BaseContext) => {
   )
 
   const spanModules = getPageModules(spanName)
-  console.log(spanModules)
 
   const store: Store = createStore(
     combineReducers({
       ...rootReducers,
       ...spanModules
-    })
+    }),
+    applyMiddleware(thunk)
   )
+
+  await fetchOnServer({ branch, store })
 
   const markup = renderToString(
     <StaticRouter location={url}>
