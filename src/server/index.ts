@@ -1,5 +1,5 @@
-import * as Koa from "koa"
-import * as Statics from "koa-static"
+import Koa from "koa"
+import Statics from "koa-static"
 
 import paths from "~/../webpack/paths"
 

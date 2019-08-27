@@ -1,8 +1,8 @@
 import "~/server/polyfill.server"
 
-import * as fs from "fs"
-import * as Koa from "koa"
-import * as React from "react"
+import fs from "fs"
+import { BaseContext } from "koa"
+import React from "react"
 import { renderToString, renderToStaticMarkup } from "react-dom/server"
 import { StaticRouter, Route, Switch } from "react-router-dom"
 import { matchRoutes } from "react-router-config"
@@ -19,7 +19,7 @@ import getPageModules from "~/libs/getPageModules"
 import Html from "~/server/middlewares/reactApplication/Html"
 import fetchOnServer from "~/server/util/fetchOnServer"
 
-export default async (ctx: Koa.BaseContext) => {
+export default async (ctx: BaseContext) => {
   const { url, path } = ctx
   const branch = matchRoutes(routes, path)
 

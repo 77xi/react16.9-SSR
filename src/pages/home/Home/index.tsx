@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { FunctionComponent } from "react"
 import { connect } from "react-redux"
 import { Store, AnyAction } from "redux"
 
@@ -14,7 +14,7 @@ interface Props {
   }
 }
 
-interface HomeType extends React.FunctionComponent<Props> {
+interface HomeType extends FunctionComponent<Props> {
   fetchData: Function
 }
 

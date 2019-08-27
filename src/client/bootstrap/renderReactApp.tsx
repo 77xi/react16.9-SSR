@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { hydrate } from "react-dom"
 import {
   BrowserRouter,
@@ -7,13 +7,13 @@ import {
   RouteComponentProps
 } from "react-router-dom"
 
-import * as redux from "redux"
+import { Store } from "redux"
 import { Provider } from "react-redux"
 
 import App from "~/App"
 
 interface Params {
-  store: redux.Store
+  store: Store
   routes: RouteComponentProps[]
 }
 

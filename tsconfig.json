@@ -8,6 +8,7 @@
     "target": "es5",
     "jsx": "react",
     "baseUrl": ".",
+    "esModuleInterop": true,
     // https://stackoverflow.com/questions/44463100/typescript-cannot-find-module-that-was-defined-in-paths-setting
     "paths": {
       "~/*": ["./src/*"]

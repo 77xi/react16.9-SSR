@@ -1,6 +1,6 @@
 import "~/client/polyfill.client"
 
-import * as React from "react"
+import React from "react"
 import { RouteComponentProps } from "react-router-dom"
 import { Reducer } from "redux"
 

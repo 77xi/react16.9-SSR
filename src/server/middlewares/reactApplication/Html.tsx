@@ -1,5 +1,5 @@
-import * as React from "react"
-import * as serialize from "serialize-javascript"
+import React from "react"
+import serialize from "serialize-javascript"
 
 import getAssets from "~/server/util/getAssets"
 
