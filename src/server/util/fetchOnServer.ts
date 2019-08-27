@@ -18,8 +18,14 @@ const fetchOnServer = async ({ branch, store }: Param) => {
 
   const { dispatch, getState } = store
 
-  if (typeof fetchData === "function") {
-    return fetchData({ dispatch, getState })
+  if (typeof fetchData !== "function") {
+    return
+  }
+
+  const result = fetchData({ dispatch, getState })
+
+  if (typeof result === "function") {
+    return result({ dispatch, getState })
   }
 }
 
