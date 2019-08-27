@@ -3,6 +3,7 @@ import { Store, Reducer } from "redux"
 
 import { createStore, applyMiddleware, combineReducers } from "redux"
 import { composeWithDevTools } from "redux-devtools-extension"
+import thunk from "redux-thunk"
 
 import rootReducers from "~/redux/reducers"
 
@@ -25,7 +26,7 @@ const initRedux = async (context: Params, next: Function) => {
   const store = createStore(
     reducers,
     initalState,
-    composeWithDevTools(applyMiddleware())
+    composeWithDevTools(applyMiddleware(thunk))
   )
 
   context.store = store
