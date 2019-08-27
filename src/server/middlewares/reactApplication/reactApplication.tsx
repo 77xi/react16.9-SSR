@@ -1,5 +1,3 @@
-import "~/server/polyfill.server"
-
 import fs from "fs"
 import { BaseContext } from "koa"
 import React from "react"

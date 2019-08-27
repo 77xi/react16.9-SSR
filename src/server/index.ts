@@ -1,3 +1,5 @@
+import "~/server/polyfill.server"
+
 import Koa from "koa"
 import Statics from "koa-static"
 
