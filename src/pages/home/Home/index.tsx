@@ -1,8 +1,9 @@
 import * as React from "react"
 import { connect } from "react-redux"
-import { Dispatch } from "redux"
+import { Store, AnyAction } from "redux"
 
-import { loadHomeData } from "../modules/home"
+import { loadHomeData } from "~/pages/home/modules/home"
+import { ThunkDispatch } from "redux-thunk"
 
 import "./index.css"
 
@@ -19,7 +20,10 @@ interface HomeType extends React.FunctionComponent<Props> {
 
 const Home: HomeType = props => <div>Home</div>
 
-Home.fetchData = () => ({ dispatch }: { dispatch: Dispatch }) =>
-  dispatch(loadHomeData())
+Home.fetchData = () => ({
+  dispatch
+}: {
+  dispatch: ThunkDispatch<Store, void, AnyAction>
+}) => dispatch(loadHomeData())
 
 export default connect(state => state)(Home)

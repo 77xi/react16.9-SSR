@@ -1,5 +1,6 @@
 import axios from "axios"
-import { AnyAction, Dispatch } from "redux"
+import { AnyAction, Dispatch, Store } from "redux"
+import { ThunkDispatch } from "redux-thunk"
 
 const MY_ACTIONS_SUCCESS = Symbol()
 
