@@ -15,12 +15,11 @@ interface Params {
 }
 
 const initRedux = async (context: Params, next: Function) => {
-  const { modules, spanName, initalState } = context
+  const { modules, initalState } = context
+
   const reducers = combineReducers({
     ...rootReducers,
-    ...(modules && {
-      [spanName]: modules
-    })
+    ...(modules && modules)
   })
 
   const store = createStore(
