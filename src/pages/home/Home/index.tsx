@@ -5,7 +5,20 @@ import { loadHomeData } from "../modules/home"
 
 import "./index.css"
 
-const Home = ({ home: { data } }) => {
+interface Props {
+  fetchData: Function
+  home: {
+    data: {
+      action_text: string
+    }[]
+  }
+}
+
+interface HomeType extends React.FunctionComponent<Props> {
+  fetchData: Function
+}
+
+const Home: HomeType = ({ home: { data } }) => {
   React.useEffect(() => {}, [])
 
   return (
@@ -17,6 +30,6 @@ const Home = ({ home: { data } }) => {
   )
 }
 
-Home.fetchData = ({ dispatch }: any) => loadHomeData()({ dispatch })
+Home.fetchData = ({ dispatch }: any) => dispatch(loadHomeData())
 
 export default connect(state => state)(Home)
