@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react"
+import React, { FunctionComponent, useEffect } from "react"
 import { connect } from "react-redux"
 import { Store, AnyAction } from "redux"
 
@@ -10,7 +10,9 @@ import "./index.css"
 interface Props {
   fetchData: Function
   home: {
-    data: object[]
+    data: {
+      target: { excerpt: string }
+    }[]
   }
 }
 
@@ -18,7 +20,17 @@ interface HomeType extends FunctionComponent<Props> {
   fetchData: Function
 }
 
-const Home: HomeType = props => <div>Home</div>
+const Home: HomeType = ({ home: { data } }) => {
+  useEffect(() => console.log(`~~~~`), [])
+
+  return (
+    <>
+      {data.map(({ target: { excerpt } }, index) => (
+        <div key={index}>{excerpt}</div>
+      ))}
+    </>
+  )
+}
 
 Home.fetchData = () => ({
   dispatch
