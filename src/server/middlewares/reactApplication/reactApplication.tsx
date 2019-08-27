@@ -12,7 +12,7 @@ import thunk from "redux-thunk"
 import App from "~/App"
 import routes from "~/routes"
 import rootReducers from "~/redux/reducers"
-import paths from "~/../webpack/paths"
+import resolveRoot from "~/libs/resolveRoot"
 import getPageModules from "~/libs/getPageModules"
 import Html from "~/server/middlewares/reactApplication/Html"
 import fetchOnServer from "~/server/util/fetchOnServer"
@@ -33,7 +33,7 @@ export default async (ctx: BaseContext) => {
   ] = branch
 
   const manifest = fs.readFileSync(
-    paths.resolveRoot("dist", "client", "manifest.json"),
+    resolveRoot("dist", "client", "manifest.json"),
     "utf-8"
   )
 

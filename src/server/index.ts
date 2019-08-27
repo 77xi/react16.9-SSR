@@ -3,7 +3,7 @@ import "~/server/polyfill.server"
 import Koa from "koa"
 import Statics from "koa-static"
 
-import paths from "~/../webpack/paths"
+import resolveRoot from "~/libs/resolveRoot"
 
 import reactApplication from "~/server/middlewares/reactApplication"
 import apiErrorHandler from "~/server/middlewares/apiErrorHandler"
@@ -15,7 +15,7 @@ const port = process.env.DEV_PORT || 8083
 const createServer = (port: Port) => {
   const app = new Koa()
 
-  app.use(Statics(paths.resolveRoot("dist")))
+  app.use(Statics(resolveRoot("dist")))
 
   app.use(apiErrorHandler)
   app.use(reactApplication)
