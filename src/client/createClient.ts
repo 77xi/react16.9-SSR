@@ -2,7 +2,7 @@ import "~/client/polyfill.client"
 
 import React from "react"
 import { RouteComponentProps } from "react-router-dom"
-import { Reducer } from "redux"
+import { ReducersMapObject } from "redux"
 
 import domReady from "~/libs/domReady"
 import bootstrap from "~/client/bootstrap"
@@ -16,7 +16,7 @@ interface CustomRoute {
 
 interface Params {
   routes?: RouteComponentProps[] | CustomRoute[]
-  modules?: Reducer
+  modules?: ReducersMapObject
 }
 
 const initClient = ({ routes, modules }: Params): Function => {

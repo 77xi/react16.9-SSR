@@ -1,5 +1,5 @@
 import { RouteComponentProps } from "react-router-dom"
-import { Store, Reducer } from "redux"
+import { Store, ReducersMapObject } from "redux"
 
 import renderReactApp from "./renderReactApp"
 import initRedux from "./initRedux"
@@ -13,7 +13,7 @@ interface CustomRoute {
 
 interface Params {
   routes?: RouteComponentProps[] | CustomRoute[]
-  modules?: Reducer
+  modules?: ReducersMapObject
   initalState?: object
   spanName?: string
   store?: Store
