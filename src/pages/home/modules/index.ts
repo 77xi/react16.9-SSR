@@ -1,4 +1,3 @@
-import home from "./home"
-import homeSub from "./homeSub"
+import reducer from "./reducer"
 
-export default { home, homeSub }
+export default { home: reducer }

@@ -1,3 +1,3 @@
-const reducer = (state = {}) => state
+const env = (state = {}) => state
 
-export default reducer
+export default env
