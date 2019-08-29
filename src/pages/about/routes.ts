@@ -1,12 +1,8 @@
-import { RouteProps } from "react-router-dom"
+import { PageRouteProps } from "~/types"
 
 import About from "./index"
 
-interface CustomRouteProps extends RouteProps {
-  name: string
-}
-
-const routes: CustomRouteProps[] = [
+const routes: PageRouteProps[] = [
   {
     exact: true,
     path: "/about",

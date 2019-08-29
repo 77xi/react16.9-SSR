@@ -1,21 +1,14 @@
 import "~/client/polyfill.client"
 
-import React from "react"
-import { RouteComponentProps } from "react-router-dom"
 import { ReducersMapObject } from "redux"
 
 import domReady from "~/libs/domReady"
 import bootstrap from "~/client/bootstrap"
 
-interface CustomRoute {
-  exact: boolean
-  path: string
-  name: string
-  component: React.ComponentType
-}
+import { PageRouteProps } from "~/types"
 
 interface Params {
-  routes?: RouteComponentProps[] | CustomRoute[]
+  routes?: PageRouteProps[]
   modules?: ReducersMapObject
 }
 

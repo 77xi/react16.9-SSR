@@ -1,18 +1,11 @@
-import { RouteComponentProps } from "react-router-dom"
 import { Store, ReducersMapObject } from "redux"
+import { PageRouteProps } from "~/types"
 
 import renderReactApp from "./renderReactApp"
 import initRedux from "./initRedux"
 
-interface CustomRoute {
-  exact: boolean
-  path: string
-  name: string
-  component: React.ComponentType
-}
-
 interface Params {
-  routes?: RouteComponentProps[] | CustomRoute[]
+  routes?: PageRouteProps[]
   modules?: ReducersMapObject
   initalState?: object
   spanName?: string
