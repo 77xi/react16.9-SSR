@@ -1,6 +1,12 @@
+import { RouteProps } from "react-router-dom"
+
 import About from "./index"
 
-const routes = [
+interface CustomRouteProps extends RouteProps {
+  name: string
+}
+
+const routes: CustomRouteProps[] = [
   {
     exact: true,
     path: "/about",
