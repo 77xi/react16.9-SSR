@@ -24,6 +24,7 @@ const Home: HomeType = ({ home: { messages } }) => {
       {messages.map(({ text }, index) => (
         <div key={index}>{text}</div>
       ))}
+      <a href="about">about</a>
     </>
   )
 }
