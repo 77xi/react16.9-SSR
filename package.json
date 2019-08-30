@@ -87,8 +87,6 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "@loadable/component": "^5.10.2",
-    "@types/loadable__component": "^5.10.0",
     "@types/node": "^12.7.2",
     "@types/react-router-dom": "^4.3.5",
     "koa": "^2.7.0",

@@ -62,7 +62,7 @@ const config = {
       chunkFilename: "[name].[hash].css"
     }),
     new ManifestPlugin({
-      publicPath: "client/"
+      publicPath: "client/[name]"
     }),
     new CompressionPlugin()
   ],
