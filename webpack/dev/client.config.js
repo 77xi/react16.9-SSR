@@ -11,7 +11,7 @@ const config = {
   output: {
     filename: "[name].[contenthash].js",
     path: paths.resolveRoot("dist/client"),
-    publicPath: "/"
+    publicPath: "client/"
   },
   module: {
     rules: [

@@ -21,7 +21,7 @@ const config = {
   output: {
     filename: "[name].[contenthash].js",
     path: paths.resolveRoot("dist/client"),
-    publicPath: "/"
+    publicPath: "client/"
   },
   module: {
     rules: [
@@ -62,7 +62,7 @@ const config = {
       chunkFilename: "[name].[hash].css"
     }),
     new ManifestPlugin({
-      publicPath: "client/[name]"
+      publicPath: "client/"
     }),
     new CompressionPlugin()
   ],
