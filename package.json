@@ -58,7 +58,6 @@
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
-    "compression-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "eslint": "^6.2.1",
     "eslint-config-prettier": "^6.0.0",
@@ -88,6 +87,8 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "@loadable/component": "^5.10.2",
+    "@types/loadable__component": "^5.10.0",
     "@types/node": "^12.7.2",
     "@types/react-router-dom": "^4.3.5",
     "koa": "^2.7.0",
