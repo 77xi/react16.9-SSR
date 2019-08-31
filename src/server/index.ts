@@ -17,8 +17,8 @@ const createServer = (port: Port) => {
 
   app.use(Statics(resolveRoot("dist")))
 
-  app.use(apiErrorHandler)
   app.use(reactApplication)
+  app.use(apiErrorHandler)
 
   app.listen(port, () => console.log(`web server listening ${port}`))
 }
