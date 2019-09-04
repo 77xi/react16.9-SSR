@@ -1,7 +1,7 @@
 import { Action } from "redux"
 import { ThunkAction } from "redux-thunk"
 
-import { MESSAGES_DATA_ACTIONS_SUCCESS, Text } from "./types"
+import { MESSAGES_ACTIONS_SUCCESS, Text } from "./types"
 
 export const loadMessageData = (): ThunkAction<
   void,
@@ -14,7 +14,7 @@ export const loadMessageData = (): ThunkAction<
   })
 
   return dispatch({
-    type: MESSAGES_DATA_ACTIONS_SUCCESS,
+    type: MESSAGES_ACTIONS_SUCCESS,
     payload: messages
   })
 }

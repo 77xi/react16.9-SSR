@@ -2,6 +2,7 @@ import { Reducer, ReducersMapObject } from "redux"
 
 const cache: ReducersMapObject = {}
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const importAll = (r: any) =>
   r.keys().map((key: string) => (cache[key] = r(key).default))
 
