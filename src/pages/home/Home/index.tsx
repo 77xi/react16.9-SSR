@@ -1,6 +1,5 @@
 import React, { useEffect, FunctionComponent } from "react"
 import { connect } from "react-redux"
-import { ThunkDispatch } from "redux-thunk"
 
 import { loadMessageData } from "~/pages/home/modules/ations"
 import { HomeState } from "~/pages/home/modules/types"
@@ -28,11 +27,6 @@ const Home: HomeType = ({ home: { messages } }) => {
   )
 }
 
-interface FetchDataParam {
-  dispatch: ThunkDispatch<null, null, null>
-}
-
-Home.fetchData = () => ({ dispatch }: FetchDataParam) =>
-  dispatch(loadMessageData())
+Home.fetchData = () => ({ dispatch }: any) => dispatch(loadMessageData())
 
 export default connect(state => state)(Home)
