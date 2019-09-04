@@ -1,14 +1,10 @@
-import { Action } from "redux"
-import { ThunkAction } from "redux-thunk"
+import { Dispatch } from "redux"
 
-import { MESSAGES_ACTIONS_SUCCESS, Text } from "./types"
+import { MESSAGES_ACTIONS_SUCCESS, Text, MessageAction } from "./types"
 
-export const loadMessageData = (): ThunkAction<
-  void,
-  null,
-  null,
-  Action<symbol>
-> => async dispatch => {
+export const loadMessageData = () => async (
+  dispatch: Dispatch
+): Promise<MessageAction> => {
   const messages: Text[] = await new Promise(resolve => {
     setTimeout(() => resolve([{ text: "home ~~~~~~" }]))
   })
