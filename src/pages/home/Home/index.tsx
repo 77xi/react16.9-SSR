@@ -1,4 +1,4 @@
-import React, { useEffect, FunctionComponent } from "react"
+import React, { useEffect, FC } from "react"
 import { connect } from "react-redux"
 
 import { loadMessageData } from "~/pages/home/modules/ations"
@@ -11,7 +11,7 @@ interface Props {
   home: HomeState
 }
 
-interface HomeType extends FunctionComponent<Props> {
+interface HomeType extends FC<Props> {
   fetchData: Function
 }
 
