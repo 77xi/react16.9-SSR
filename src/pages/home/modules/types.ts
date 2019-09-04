@@ -9,7 +9,7 @@ export interface HomeState {
 }
 
 export interface MessageAction {
-  type: string
+  type: typeof MESSAGES_ACTIONS_SUCCESS
   payload: Text[]
 }
 
