@@ -4,14 +4,15 @@
     "eslint:recommended",
     "plugin:prettier/recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended"
   ],
   "env": {
     "es6": true,
     "node": true,
     "browser": true
   },
-  "plugins": ["prettier", "react", "react-hooks", "@typescript-eslint"],
+  "plugins": ["prettier", "react", "react-hooks", "@typescript-eslint", "jest"],
   "rules": {
     "prettier/prettier": "error",
     "react/prop-types": 0,
@@ -20,6 +21,6 @@
     "@typescript-eslint/member-delimiter-style": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/no-unused-vars": ["error"],
-    "require-atomic-updates": 0,
+    "require-atomic-updates": 0
   }
 }

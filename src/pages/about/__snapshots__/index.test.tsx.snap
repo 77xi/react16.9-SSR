@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About Page render No Crash 1`] = `
+<div
+  className="About"
+>
+  i am about page
+</div>
+`;
