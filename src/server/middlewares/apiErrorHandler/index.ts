@@ -1,6 +1,6 @@
 import { BaseContext } from "koa"
 
-export default async (_: BaseContext, next: () => Function) => {
+export default async (_: BaseContext, next: Function) => {
   try {
     await next()
   } catch (err) {
