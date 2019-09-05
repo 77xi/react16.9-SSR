@@ -1,7 +1,7 @@
 import React, { useEffect, FC } from "react"
 import { connect } from "react-redux"
 
-import { loadMessageData } from "~/pages/home/modules/ations"
+import { loadMessage } from "~/pages/home/modules/ations"
 import { HomeState } from "~/pages/home/modules/types"
 
 import "./index.css"
@@ -27,6 +27,6 @@ const Home: HomeType = ({ home: { messages } }) => {
   )
 }
 
-Home.fetchData = () => ({ dispatch }: any) => dispatch(loadMessageData())
+Home.fetchData = () => ({ dispatch }: any) => dispatch(loadMessage())
 
 export default connect(state => state)(Home)

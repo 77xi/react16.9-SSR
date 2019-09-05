@@ -1,4 +1,4 @@
-export const MESSAGES_ACTIONS_SUCCESS = "MESSAGES_ACTIONS_SUCCESS"
+export const MESSAGES_ACTIONS_SUCCESS = Symbol("MESSAGES_ACTIONS_SUCCESS")
 
 export interface Text {
   text: string
@@ -9,7 +9,7 @@ export interface HomeState {
 }
 
 export interface MessageAction {
-  type: string
+  type: typeof MESSAGES_ACTIONS_SUCCESS
   payload: Text[]
 }
 
