@@ -27,6 +27,6 @@ const Home: HomeType = ({ home: { messages } }) => {
   )
 }
 
-Home.fetchData = () => ({ dispatch }: any) => dispatch(loadMessage())
+Home.fetchData = () => (dispatch: any) => dispatch(loadMessage())
 
 export default connect(state => state)(Home)
