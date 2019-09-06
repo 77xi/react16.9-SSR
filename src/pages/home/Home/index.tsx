@@ -1,4 +1,4 @@
-import React, { useEffect, FC } from "react"
+import React, { FC } from "react"
 import { connect } from "react-redux"
 
 import { loadMessage } from "~/pages/home/modules/ations"
@@ -15,17 +15,13 @@ interface HomeType extends FC<Props> {
   fetchData: Function
 }
 
-const Home: HomeType = ({ home: { messages } }) => {
-  useEffect(() => console.log(`~~~~`), [])
-
-  return (
-    <>
-      {messages.map(({ text }, index) => (
-        <div key={index}>{text}</div>
-      ))}
-    </>
-  )
-}
+const Home: HomeType = ({ home: { messages } }) => (
+  <>
+    {messages.map(({ text }, index) => (
+      <div key={index}>{text}</div>
+    ))}
+  </>
+)
 
 Home.fetchData = () => (dispatch: any) => dispatch(loadMessage())
 
