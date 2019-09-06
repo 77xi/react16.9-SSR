@@ -8,25 +8,26 @@ interface Param {
 }
 
 const fetchOnServer = async ({ branch, store }: Param) => {
-  const [
-    {
-      route: {
-        component: { fetchData }
-      }
+  const promise = branch.map(({ route, match }) => {
+    const { params } = match
+    const {
+      component: { fetchData }
+    } = route
+
+    if (typeof fetchData !== "function") return
+
+    const result = fetchData({
+      params,
+      dispatch: store.dispatch,
+      getState: store.getState
+    })
+
+    if (typeof result === "function") {
+      return result(store.dispatch, store.getState)
     }
-  ] = branch
+  })
 
-  const { dispatch, getState } = store
-
-  if (typeof fetchData !== "function") {
-    return
-  }
-
-  const result = fetchData({ dispatch, getState })
-
-  if (typeof result === "function") {
-    return result({ dispatch, getState })
-  }
+  return Promise.all(promise.filter(Boolean))
 }
 
 export default fetchOnServer
