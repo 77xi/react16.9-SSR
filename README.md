@@ -35,5 +35,5 @@ yarn build
 ## build analyze
 
 ```bash
-yarn build:inspect
+yarn build:analyze
 ```
