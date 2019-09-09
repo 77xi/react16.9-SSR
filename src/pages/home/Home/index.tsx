@@ -23,6 +23,7 @@ const Home: HomeType = ({ home: { messages } }) => (
   </>
 )
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 Home.fetchData = () => (dispatch: any) => dispatch(loadMessage())
 
 export default connect(state => state)(Home)
