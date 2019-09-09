@@ -1,0 +1,52 @@
+const path = require("path")
+
+module.exports = {
+  parser: "@typescript-eslint/parser",
+  extends: [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  env: {
+    es6: true,
+    node: true,
+    browser: true
+  },
+  plugins: [
+    "prettier",
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "jest",
+    "import"
+  ],
+  rules: {
+    "prettier/prettier": "error",
+    "react/prop-types": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/member-delimiter-style": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "require-atomic-updates": 0
+  },
+  settings: {
+    "import/resolver": {
+      webpack: {
+        config: path.resolve("./webpack/dev/base.config.js")
+      },
+      node: {
+        moduleDirectory: [path.resolve("./node_modules")]
+      }
+    },
+    "import/ignore": path.resolve("./node_modules"),
+    // fix: Warning: React version not specified in eslint-plugin-react settings. See https://github.com/yannickcr/eslint-plugin-react#configuration .
+    react: {
+      version: "detect"
+    }
+  }
+}
