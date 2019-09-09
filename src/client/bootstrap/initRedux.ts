@@ -1,7 +1,12 @@
 import { RouteComponentProps } from "react-router-dom"
-import { Store, Reducer } from "redux"
+import {
+  Store,
+  Reducer,
+  createStore,
+  applyMiddleware,
+  combineReducers
+} from "redux"
 
-import { createStore, applyMiddleware, combineReducers } from "redux"
 import { composeWithDevTools } from "redux-devtools-extension"
 import thunk from "redux-thunk"
 
