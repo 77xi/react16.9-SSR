@@ -12,7 +12,6 @@ interface Params {
   store?: Store
 }
 
-// const next = () => initRedux(context, () => renderReactApp(context, () => Promise.resolve))
 const microFlow = (middlewares: Function[]) => (context: Params) => {
   const next = middlewares.reduceRight(
     (acc, f) => () => f(context, acc),
