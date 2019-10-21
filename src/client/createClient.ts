@@ -22,12 +22,7 @@ const initClient = ({ routes, modules }: Params): Function => {
 const createClient = (options: Params) =>
   domReady()
     .then(() => initClient(options))
-    .then(() => {
-      // report or set init success
-    })
-    .catch(err => {
-      console.error(`init err`, err)
-      // report error
-    })
+    .then() // report or set init success
+    .catch(console.error)
 
 export default createClient
