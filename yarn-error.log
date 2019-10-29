@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js add eslint-import-resolver --dev
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js add app-root-dir lodash.zipObject --dev
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin:/Users/yxuchen/Library/Android/sdk/tools:/Users/yxuchen/Library/Android/sdk/platform-tools:/Library/flutter/bin
 
 Yarn version: 
   1.17.3
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/eslint-import-resolver: Not found
+  Error: https://registry.yarnpkg.com/lodash.zipObject: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:66830:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:140464:22)
       at Request.emit (events.js:198:13)
@@ -126,6 +126,7 @@ npm manifest:
     "dependencies": {
       "@types/node": "^12.7.2",
       "@types/react-router-dom": "^4.3.5",
+      "eslint-import-resolver-webpack": "^0.11.1",
       "eslint-plugin-import": "^2.18.2",
       "koa": "^2.7.0",
       "koa-static": "^5.0.0",
