@@ -57,7 +57,8 @@
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/eslint-plugin-tslint": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
-    "app-root-dir": "^1.0.2",
+    "@types/node": "^12.7.2",
+    "@types/react-router-dom": "^4.3.5",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
@@ -70,6 +71,8 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-typescript": "^0.14.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
     "husky": "^3.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
@@ -82,9 +85,7 @@
     "redux-devtools-extension": "^2.13.8",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.0.0",
-    "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
-    "typescript-eslint": "^0.0.1-alpha.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^2.1.0",
     "webpack": "^4.39.1",
@@ -95,10 +96,6 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "@types/node": "^12.7.2",
-    "@types/react-router-dom": "^4.3.5",
-    "eslint-import-resolver-webpack": "^0.11.1",
-    "eslint-plugin-import": "^2.18.2",
     "koa": "^2.7.0",
     "koa-static": "^5.0.0",
     "lodash.flatten": "^4.4.0",
@@ -111,6 +108,7 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "regenerator-runtime": "^0.13.3",
-    "serialize-javascript": "^2.1.1"
+    "serialize-javascript": "^2.1.1",
+    "app-root-dir": "^1.0.2"
   }
 }
