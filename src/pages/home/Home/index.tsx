@@ -1,21 +1,17 @@
-import React, { FC } from "react"
+import React from "react"
 import { connect } from "react-redux"
 
 import { loadMessage } from "~/pages/home/modules/ations"
 import { HomeState } from "~/pages/home/modules/types"
+import { DefaultComponentType } from "~/types"
 
 import "./index.css"
 
 interface Props {
-  fetchData: Function
   home: HomeState
 }
 
-interface HomeType extends FC<Props> {
-  fetchData: Function
-}
-
-const Home: HomeType = ({ home: { messages } }) => (
+const Home: DefaultComponentType<Props> = ({ home: { messages } }) => (
   <>
     {messages.map(({ text }, index) => (
       <div key={index}>{text}</div>
