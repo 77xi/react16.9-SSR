@@ -6,5 +6,5 @@ export interface PageRouteProps extends RouteProps {
 }
 
 export interface FetchFC<T> extends FC<T> {
-  fetchData: Function
+  fetchData?: Function
 }
