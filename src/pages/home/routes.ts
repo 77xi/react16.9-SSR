@@ -1,6 +1,6 @@
 import { PageRouteProps } from "~/types"
 
-import Home from "./Home"
+import Home from "."
 
 const routes: PageRouteProps[] = [
   {
