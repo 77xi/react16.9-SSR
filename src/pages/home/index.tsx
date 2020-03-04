@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { connect } from "react-redux"
 
 import { loadMessage } from "~/pages/home/modules/ations"
@@ -11,13 +11,21 @@ interface Props {
   home: HomeState
 }
 
-const Home: FetchFC<Props> = ({ home: { messages } }) => (
-  <>
-    {messages.map(({ text }, index) => (
-      <div key={index}>{text}</div>
-    ))}
-  </>
-)
+const Home: FetchFC<Props> = () => {
+  useEffect(() => {
+    window.document.title = "I am Home page"
+  }, [])
+
+  return (
+    <div className="Home">
+      <div className="Home-header">Header</div>
+      <div className="Home-content">
+        <div className="Home-left">Menu</div>
+        <div className="Home-right">Content</div>
+      </div>
+    </div>
+  )
+}
 
 Home.fetchData = () => (dispatch: any) => dispatch(loadMessage())
 
