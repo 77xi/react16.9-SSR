@@ -46,10 +46,12 @@
     "@types/koa": "^2.0.49",
     "@types/koa-static": "^4.0.1",
     "@types/lodash": "^4.14.137",
+    "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.2",
     "@types/react-router-config": "^5.0.0",
+    "@types/react-router-dom": "^4.3.5",
     "@types/react-test-renderer": "^16.9.0",
     "@types/serialize-javascript": "^1.5.0",
     "@types/webpack": "^4.39.0",
@@ -57,8 +59,6 @@
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/eslint-plugin-tslint": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
-    "@types/node": "^12.7.2",
-    "@types/react-router-dom": "^4.3.5",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
@@ -66,13 +66,13 @@
     "css-loader": "^3.2.0",
     "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.0.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.16.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-typescript": "^0.14.0",
-    "eslint-import-resolver-webpack": "^0.11.1",
-    "eslint-plugin-import": "^2.18.2",
     "husky": "^3.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
@@ -96,6 +96,8 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "@0x0006e/hybrid-js-sdk": "^1.2.9",
+    "app-root-dir": "^1.0.2",
     "koa": "^2.7.0",
     "koa-static": "^5.0.0",
     "lodash.flatten": "^4.4.0",
@@ -108,7 +110,6 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "regenerator-runtime": "^0.13.3",
-    "serialize-javascript": "^2.1.1",
-    "app-root-dir": "^1.0.2"
+    "serialize-javascript": "^2.1.1"
   }
 }
