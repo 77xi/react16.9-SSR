@@ -6,7 +6,7 @@ import { connect } from "react-redux"
 import { HomeState } from "~/pages/home/modules/types"
 import { FetchComponent } from "~/types"
 
-import ReactIcon from "./react.png"
+import hybrid, { simulator } from "@0x0006e/hybrid-js-sdk"
 
 import "./index.css"
 
@@ -16,7 +16,18 @@ interface Props {
 
 const Home: FetchComponent<Props> = () => {
   useEffect(() => {
+    simulator()
+
+    hybrid
+      .dispatch("answer/writeAnswer", { id: 123456789 })
+      .then(console.log)
+      .catch(console.error)
+
+    const unsubscribe = hybrid.listen("base/networkChange", console.log)
+
     window.document.title = "I am Home page"
+
+    return () => unsubscribe
   }, [])
 
   return (

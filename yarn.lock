@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@0x0006e/hybrid-js-sdk@^1.2.9":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@0x0006e/hybrid-js-sdk/-/hybrid-js-sdk-1.2.9.tgz#89108b979fed8dd0d28124d2d34339af0f69ec83"
+  integrity sha512-YcV4AD4sXspCys1jutHbgNdI1+bUfEogJascMwwfMicbZzg0kVOeeZVVoIURPE4sktQA0OvItJzABJ8GyaaGSQ==
+  dependencies:
+    uuid "^3.3.2"
+
 "@babel/cli@^7.5.5":
   version "7.8.4"
   resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.8.4.tgz#505fb053721a98777b2b175323ea4f090b7d3c1c"
