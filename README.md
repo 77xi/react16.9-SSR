@@ -47,3 +47,7 @@ yarn build
 ```bash
 yarn build:analyze
 ```
+
+## TODO
+
+- universal webpack config
