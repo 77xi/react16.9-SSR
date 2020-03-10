@@ -10,6 +10,10 @@ const config = {
       "~": paths.resolveRoot("src")
     },
     extensions: [".js", ".ts", ".tsx"]
+  },
+  watch: true,
+  watchOptions: {
+    ignored: /dist/
   }
 }
 
