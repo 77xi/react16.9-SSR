@@ -10,7 +10,7 @@ import apiErrorHandler from "~/server/middlewares/apiErrorHandler"
 
 type Port = string | number
 
-const port = process.env.DEV_PORT || 8083
+const port = process.env.PORT || 8083
 
 const createServer = (port: Port) => {
   const app = new Koa()
