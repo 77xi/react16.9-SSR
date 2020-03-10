@@ -15,13 +15,13 @@
 ### dev
 
 ```bash
-yarn start
+yarn dev
 ```
 
 ### dev inspect
 
 ```bash
-yarn start:inspect
+yarn dev:inspect
 ```
 
 ### lint
