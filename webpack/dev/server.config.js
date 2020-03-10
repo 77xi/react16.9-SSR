@@ -14,7 +14,7 @@ const config = {
   output: {
     filename: "[name].js",
     path: paths.resolveRoot("dist/server"),
-    publicPath: "/"
+    publicPath: "client/"
   },
   module: {
     rules: [
@@ -34,6 +34,17 @@ const config = {
         use: [
           {
             loader: "babel-loader"
+          }
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192
+            }
           }
         ]
       }
