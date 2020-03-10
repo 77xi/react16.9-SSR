@@ -2,9 +2,11 @@
   "name": "react-ssr",
   "version": "1.0.0",
   "description": "react-ssr",
+  "main": "dist/server/server.js",
   "scripts": {
     "dev": "yarn compiler & yarn server",
     "dev:inspect": "yarn compiler & yarn server:inspect",
+    "start": "npx nodemon ./dist/server/server.js",
     "compiler": "npx webpack --config ./webpack/dev",
     "server": "npx nodemon --watch ./dist/server ./dist/server/server.js",
     "server:inspect": "npx nodemon --inspect ./dist/server/server.js",
