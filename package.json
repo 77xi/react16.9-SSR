@@ -2,6 +2,7 @@
   "name": "react-ssr",
   "version": "1.0.0",
   "description": "react-ssr",
+  "main": "dist/server/server/js",
   "scripts": {
     "start": "yarn compiler & yarn server",
     "start:inspect": "yarn compiler & yarn server:inspect",
