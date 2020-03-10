@@ -13,7 +13,7 @@
 
 .Home-left {
   width: 100px;
-  /* flex-shrink: 0; */
+  flex-shrink: 0;
   height: 95vh;
   background-color: rosybrown;
 }
@@ -22,4 +22,8 @@
   flex-grow: 1;
   height: 95vh;
   background-color: salmon;
+}
+
+.Home-ReactIcon {
+  width: 100%;
 }

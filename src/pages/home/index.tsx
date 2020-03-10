@@ -6,6 +6,8 @@ import { connect } from "react-redux"
 import { HomeState } from "~/pages/home/modules/types"
 import { FetchFC } from "~/types"
 
+import ReactIcon from "./react.png"
+
 import "./index.css"
 
 interface Props {
@@ -22,7 +24,10 @@ const Home: FetchFC<Props> = () => {
       <div className="Home-header">Header</div>
       <div className="Home-content">
         <div className="Home-left">Menu</div>
-        <div className="Home-right">Content</div>
+        <div className="Home-right">
+          Content
+          <img className="Home-ReactIcon" src={ReactIcon} />
+        </div>
       </div>
     </div>
   )
