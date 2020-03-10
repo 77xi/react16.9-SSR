@@ -14,7 +14,7 @@ const config = {
   output: {
     filename: "[name].js",
     path: paths.resolveRoot("dist/server"),
-    publicPath: "/"
+    publicPath: "client/"
   },
   module: {
     rules: [
