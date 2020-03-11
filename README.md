@@ -54,4 +54,5 @@ yarn build:analyze
 
 ## TODO
 
-- universal webpack config
+- [x] universal webpack config
+- [ ] refactor TS style
