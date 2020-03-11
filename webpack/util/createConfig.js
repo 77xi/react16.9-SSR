@@ -101,7 +101,7 @@ function createConfig(target = web, mode = development) {
     },
     plugins: [
       new CleanWebpackPlugin(),
-      new ForkTsCheckerWebpackPlugin(),
+      isDev && new ForkTsCheckerWebpackPlugin(),
       isWeb &&
         new MiniCssExtractPlugin({
           filename: "[name].[hash].css",
