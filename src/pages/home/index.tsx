@@ -25,7 +25,7 @@ const Home: FetchComponent<Props> = () => {
       <div className="Home-content">
         <div className="Home-left">Menu</div>
         <div className="Home-right">
-          Content1
+          Content
           <img className="Home-ReactIcon" src={ReactIcon} />
         </div>
       </div>

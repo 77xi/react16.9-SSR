@@ -8,7 +8,7 @@
     "dev:inspect": "yarn compiler & yarn server:inspect",
     "start": "npx nodemon ./dist/server/server.js",
     "compiler": "npx webpack --config ./webpack/dev",
-    "server": "npx nodemon --watch ./dist/server ./dist/server/server.js",
+    "server": "npx nodemon ./dist/server/server.js",
     "server:inspect": "npx nodemon --inspect ./dist/server/server.js",
     "build": "npx webpack --config ./webpack/prod",
     "build:analyze": "npx webpack --config ./webpack/prod/analyze.js",
