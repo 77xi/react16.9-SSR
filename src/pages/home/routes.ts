@@ -5,7 +5,7 @@ import Home from "."
 const routes: PageRouteProps[] = [
   {
     exact: true,
-    path: "/home",
+    path: "/",
     component: Home,
     name: "home"
   }
