@@ -1,7 +1,7 @@
-const domReady = () =>
+const domReady = (): Promise<string | Event> =>
   new Promise(resolve => {
     if (/interactive|complete/.test(document.readyState)) {
-      resolve()
+      resolve("complete")
     } else {
       document.addEventListener("DOMContentLoaded", resolve)
     }
