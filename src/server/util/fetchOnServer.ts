@@ -2,7 +2,6 @@ import { Store } from "redux"
 import { MatchedRoute } from "react-router-config"
 
 interface Param {
-  /* eslint-disable @typescript-eslint/no-explicit-any */
   branch: MatchedRoute<any>[]
   store: Store
 }

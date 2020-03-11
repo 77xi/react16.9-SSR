@@ -1,5 +1,6 @@
 const nodeExternals = require("webpack-node-externals")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
 
 const paths = require("../paths")
 const baseConfig = require("./base.config")
@@ -51,7 +52,7 @@ const config = {
       }
     ]
   },
-  plugins: [new CleanWebpackPlugin()]
+  plugins: [new CleanWebpackPlugin(), new ForkTsCheckerWebpackPlugin()]
 }
 
 module.exports = config

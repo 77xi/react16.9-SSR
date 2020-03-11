@@ -5,6 +5,6 @@ export interface PageRouteProps extends RouteProps {
   name: string
 }
 
-export interface FetchFC<T> extends FC<T> {
+export interface FetchComponent<T> extends FC<T> {
   fetchData?: Function
 }

@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 
 // import { loadMessage } from "~/pages/home/modules/ations"
 import { HomeState } from "~/pages/home/modules/types"
-import { FetchFC } from "~/types"
+import { FetchComponent } from "~/types"
 
 import ReactIcon from "./react.png"
 
@@ -14,7 +14,7 @@ interface Props {
   home: HomeState
 }
 
-const Home: FetchFC<Props> = () => {
+const Home: FetchComponent<Props> = () => {
   useEffect(() => {
     window.document.title = "I am Home page"
   }, [])

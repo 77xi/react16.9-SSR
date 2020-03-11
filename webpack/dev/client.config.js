@@ -1,6 +1,7 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const ManifestPlugin = require("webpack-manifest-plugin")
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
 
 const baseConfig = require("./base.config")
 const paths = require("../paths")
@@ -53,7 +54,8 @@ const config = {
     }),
     new ManifestPlugin({
       publicPath: "client/"
-    })
+    }),
+    new ForkTsCheckerWebpackPlugin()
   ]
 }
 
