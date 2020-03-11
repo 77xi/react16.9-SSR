@@ -14,7 +14,8 @@ const config = {
   watch: true,
   watchOptions: {
     ignored: /dist/
-  }
+  },
+  stats: "errors-only"
 }
 
 module.exports = config
