@@ -10,7 +10,6 @@
     "compiler": "npx webpack --config ./webpack/dev",
     "server": "npx nodemon --watch ./dist/server ./dist/server/server.js",
     "server:inspect": "npx nodemon --inspect ./dist/server/server.js",
-    "//": "lint command below is very trick, but \"prettier-eslint-cli\" does not work: https://github.com/prettier/prettier-eslint-cli",
     "build": "npx webpack --config ./webpack/prod",
     "build:analyze": "npx webpack --config ./webpack/prod/analyze.js",
     "lint": "npx eslint \"src/**/*.{js,ts,tsx}\" --fix && npx prettier --write \"src/**/*.{css,html}\"",

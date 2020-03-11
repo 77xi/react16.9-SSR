@@ -1,7 +1,10 @@
-const prodConfig = require("./client.config")
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin
 
-prodConfig.plugins.push(new BundleAnalyzerPlugin())
+const createConfig = require("../createConfig")
 
-module.exports = prodConfig
+const clientConfig = createConfig("web", "production")
+
+clientConfig.plugins.push(new BundleAnalyzerPlugin())
+
+module.exports = clientConfig
