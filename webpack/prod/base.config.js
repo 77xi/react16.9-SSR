@@ -9,7 +9,7 @@ const config = {
     alias: {
       "~": paths.resolveRoot("src")
     },
-    extensions: [".js", ".ts", ".tsx"]
+    extensions: [".js", ".ts", ".d.ts", ".tsx"]
   }
 }
 
