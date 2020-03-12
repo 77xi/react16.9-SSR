@@ -3,18 +3,17 @@ import React, { useEffect } from "react"
 import { connect } from "react-redux"
 
 // import { loadMessage } from "~/pages/home/modules/ations"
-import { HomeState } from "~/pages/home/modules/types"
-import { FetchComponent } from "~/types"
+// import { HomeState } from "~/pages/home/modules/types"
 
 import ReactIcon from "./react.png"
 
 import "./index.css"
 
-interface Props {
-  home: HomeState
-}
+// interface Props {
+//   home: HomeState
+// }
 
-const Home: FetchComponent<Props> = () => {
+const Home = () => {
   useEffect(() => {
     window.document.title = "I am Home page"
   }, [])
@@ -33,6 +32,6 @@ const Home: FetchComponent<Props> = () => {
   )
 }
 
-// Home.fetchData = () => (dispatch: Dispatch) => dispatch(loadMessage())
+// Home.fetchData = () => {}
 
 export default connect(state => state)(Home)

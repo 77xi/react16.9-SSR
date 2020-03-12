@@ -3,6 +3,8 @@ import React, { MouseEvent } from "react"
 import "./index.css"
 
 class About extends React.Component {
+  // static fetchData = () => {}
+
   handleClick = (e: MouseEvent<HTMLDivElement>) => {
     console.log(e)
   }
