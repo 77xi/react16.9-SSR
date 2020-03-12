@@ -1,7 +1,23 @@
-import React from "react"
+import React, { MouseEvent } from "react"
 
 import "./index.css"
 
-const About = () => <div className="About">i am about page</div>
+class About extends React.Component {
+  handleClick = (e: MouseEvent<HTMLDivElement>) => {
+    console.log(e)
+  }
+
+  componentDidMount() {
+    console.log("mount")
+  }
+
+  render() {
+    return (
+      <div className="About" onClick={this.handleClick}>
+        i am about page
+      </div>
+    )
+  }
+}
 
 export default About
