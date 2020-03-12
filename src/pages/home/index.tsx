@@ -8,6 +8,8 @@ import { FetchComponent } from "~/types"
 
 import hybrid, { simulator } from "@0x0006e/hybrid-js-sdk"
 
+import ReactIcon from "./react.png"
+
 import "./index.css"
 
 interface Props {
