@@ -6,8 +6,6 @@ const nodeExternals = require("webpack-node-externals")
 
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin
 
 const paths = require("./paths")
 const getEntrys = require("./getEntrys")
