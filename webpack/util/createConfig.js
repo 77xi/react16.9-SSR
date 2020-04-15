@@ -8,10 +8,11 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 
 const paths = require("./paths")
-const getEntrys = require("./getEntrys")
+const { getClientAppEntrys, getServerAppEntrys } = require("./getEntrys")
 const { vendorDependencies } = require("./constant")
 
-const pageEntrys = getEntrys()
+const clientAppEntrys = getClientAppEntrys()
+const serverAppEntrys = getServerAppEntrys()
 
 const web = "web"
 const development = "development"
@@ -24,13 +25,13 @@ function createConfig(target = web, mode = development) {
     mode,
     entry: {
       ...(isWeb && {
-        ...pageEntrys,
+        ...clientAppEntrys,
         ...(!isDev && {
           vendor: vendorDependencies
         })
       }),
       ...(!isWeb && {
-        server: paths.resolveRoot("src/server")
+        ...serverAppEntrys
       })
     },
     output: {
@@ -130,7 +131,7 @@ function createConfig(target = web, mode = development) {
                 chunks: "initial",
                 name: "common",
                 priority: -1,
-                minChunks: Object.keys(pageEntrys).length,
+                minChunks: Object.keys(clientAppEntrys).length,
                 enforce: true
               }
             }

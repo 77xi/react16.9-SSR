@@ -1,9 +1,9 @@
-import "~/client/polyfill.client"
+import "~/entry/client/polyfill.client"
 
 import { ReducersMapObject } from "redux"
 
 import domReady from "~/libs/domReady"
-import bootstrap from "~/client/bootstrap"
+import bootstrap from "~/entry/client/bootstrap"
 
 import { PageRouteProps } from "~/types"
 

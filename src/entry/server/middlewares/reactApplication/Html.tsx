@@ -1,7 +1,7 @@
 import React from "react"
 import serialize from "serialize-javascript"
 
-import getAssets from "~/server/util/getAssets"
+import getAssets from "~/entry/server/util/getAssets"
 
 interface Param {
   markup: string
