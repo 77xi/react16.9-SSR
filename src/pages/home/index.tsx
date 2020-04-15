@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 // import { Dispatch } from "redux"
 import { connect } from "react-redux"
+import { Link } from "react-router-dom"
 
 // import { loadMessage } from "~/pages/home/modules/ations"
 // import { HomeState } from "~/pages/home/modules/types"
@@ -24,7 +25,7 @@ const Home = () => {
       <div className="Home-content">
         <div className="Home-left">Menu</div>
         <div className="Home-right">
-          Content
+          <Link to="/content">Content</Link>
           <img className="Home-ReactIcon" src={ReactIcon} />
         </div>
       </div>
