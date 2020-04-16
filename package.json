@@ -6,9 +6,9 @@
   "scripts": {
     "dev:account": "BUILD_APP=account yarn compiler & yarn server",
     "dev:home": "BUILD_APP=home yarn compiler & yarn server",
-    "start": "npx nodemon ./dist/server/*.js",
+    "start": "npx nodemon ./dist/server/server.js",
     "compiler": "npx webpack --config ./webpack/dev",
-    "server": "npx nodemon ./dist/server/*.js",
+    "server": "npx nodemon ./dist/server/server.js",
     "server:inspect": "npx nodemon --inspect ./dist/server/server.js",
     "build": "npx webpack --config ./webpack/prod",
     "build:account": "BUILD_APP=account npx webpack --config ./webpack/prod",

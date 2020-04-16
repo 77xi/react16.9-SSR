@@ -35,7 +35,7 @@ function createConfig(target = web, mode = development) {
       })
     },
     output: {
-      filename: isWeb ? "[name].[contenthash].js" : "[name].js",
+      filename: isWeb ? "[name].[contenthash].js" : "server.js",
       path: isWeb
         ? paths.resolveRoot("dist/client")
         : paths.resolveRoot("dist/server"),
