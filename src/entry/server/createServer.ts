@@ -9,12 +9,13 @@ import reactApplication from "~/entry/server/middlewares/reactApplication"
 import apiErrorHandler from "~/entry/server/middlewares/apiErrorHandler"
 
 type params = {
-  port?: string | number
   routes: any
   modules?: any
 }
 
-const createServer = ({ port, routes, modules }: params) => {
+const port = process.env.port || 9000
+
+const createServer = ({ routes, modules }: params) => {
   const app = new Koa()
 
   app.use(Statics(resolveRoot("dist")))

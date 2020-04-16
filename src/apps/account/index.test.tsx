@@ -1,10 +1,10 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import About from "./index"
+import Account from "."
 
-test("About Page render No Crash", () => {
-  const Component = renderer.create(<About />)
+test("Account Page render No Crash", () => {
+  const Component = renderer.create(<Account />)
   const tree = Component.toJSON()
 
   expect(tree).toMatchSnapshot()

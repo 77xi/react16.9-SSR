@@ -2,4 +2,4 @@ import createServer from "~/entry/server/createServer"
 import routes from "./routes"
 import modules from "./modules"
 
-createServer({ routes, modules, port: 9001 })
+createServer({ routes, modules })

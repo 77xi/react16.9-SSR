@@ -2,7 +2,7 @@ import React, { MouseEvent } from "react"
 
 import "./index.css"
 
-class About extends React.Component {
+class Account extends React.Component {
   // static fetchData = () => {}
 
   handleClick = (e: MouseEvent<HTMLDivElement>) => {
@@ -15,11 +15,11 @@ class About extends React.Component {
 
   render() {
     return (
-      <div className="About" onClick={this.handleClick}>
+      <div className="Account" onClick={this.handleClick}>
         i am about page
       </div>
     )
   }
 }
 
-export default About
+export default Account

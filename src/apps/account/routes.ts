@@ -1,13 +1,13 @@
 import { PageRouteProps } from "~/types"
 
-import About from "./index"
+import Account from "./index"
 
 const routes: PageRouteProps[] = [
   {
     exact: true,
-    path: "/about",
-    component: About,
-    name: "about"
+    path: "/",
+    component: Account,
+    name: "account"
   }
 ]
 
